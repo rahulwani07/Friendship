@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  margin-top: 15vh;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.2em;
+  animation: pulse 2s infinite;
+}
+
+.tagline {
+  font-size: 1.5em;
+  color: #fff;
+  opacity: 0.9;
+  margin-top: 1em;
+}
+
+.hearts::before {
+  content: "💖 💝 💘 💗 💓 💕 💞";
+  font-size: 3em;
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  animation: floatHearts 5s infinite ease-in-out;
+}
+
+@keyframes floatHearts {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100px); opacity: 0; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999;
+}
